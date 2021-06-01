@@ -8,7 +8,7 @@ La aplicación se compone de un home, un menu lateral y los productos
 
 **Vista Home y menú lateral:** 
 
-![home](https://github.com/iperezdam2019/ProyectoDAM/blob/master/assets/images/home.PNG)  ![menu](assets\images\menuLateral.PNG)  
+![home](https://github.com/iperezdam2019/ProyectoDAM/blob/master/assets/images/home.PNG)  ![menu](https://github.com/iperezdam2019/ProyectoDAM/blob/master/assets/images/menuLateral.PNG)  
 
 **Vista Lista Producto y detalle**   
 
