@@ -12,10 +12,10 @@ La aplicación se compone de un home, un menu lateral y los productos
 
 **Vista Lista Producto y detalle**   
 
-![producto](assets\images\producto.PNG)  ![detalleProducto](assets\images\detalleProducto.PNG)  
+![producto](https://github.com/iperezdam2019/ProyectoDAM/blob/master/assets/images/producto.PNG)  ![detalleProducto](https://github.com/iperezdam2019/ProyectoDAM/blob/master/assets/images/detalleProducto.PNG)  
 
 **Vista del carrito**  
 
-![carrito](assets\images\carrito.PNG)
+![carrito](https://github.com/iperezdam2019/ProyectoDAM/blob/master/assets/images/carrito.PNG)
 
 
