@@ -18,4 +18,5 @@ La aplicación se compone de un home, un menu lateral y los productos
 
 ![carrito](https://github.com/iperezdam2019/ProyectoDAM/blob/master/assets/images/carrito.PNG)
 
+Aplicación conectada a Firebase y una base datos RealTime Database.
 
