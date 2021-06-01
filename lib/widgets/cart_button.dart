@@ -5,6 +5,7 @@ import 'package:shop_app/models/db_products.dart';
 
 class CartButton extends StatelessWidget {
   CartButton(this.compra);
+
   final Product compra;
 
   @override
@@ -22,7 +23,15 @@ class CartButton extends StatelessWidget {
                   onPressed: () {
                     MessageWidget.info(context, 'Añadido a la cesta', 3);
                     print("El id del articulo es " + compra.toString());
-                    Carrito().add(compra);
+                    if (Carrito().addUnit(compra) == false) {
+                      showDialog(
+                        context: context,
+                        builder: (_) => AlertDialog(
+                          title: Text("No hay stock"),
+                          content: Text("No disponible"),
+                        ),
+                      );
+                    }
                   },
                   child: Text("Añadir a la cesta"),
                   color: Colors.amber,
