@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "704429549935",
+    "firebase_url": "https://secondskin-5d3ce-default-rtdb.firebaseio.com",
+    "project_id": "secondskin-5d3ce",
+    "storage_bucket": "secondskin-5d3ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704429549935:android:a409de70a67dcef22e609a",
+        "android_client_info": {
+          "package_name": "com.ieseljust.secondskin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704429549935-tntr8343er4i9hj449mjlup9690egdo8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ieseljust.secondskin",
+            "certificate_hash": "4943fa0bcd68f321703eacf41def5a049bf2c06b"
+          }
+        },
+        {
+          "client_id": "704429549935-gc54qk0cu832ns3nbnkvn9h1q8n0cl6h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_efJazBpNn7GNSmxKfTZGgJINJWebEVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704429549935-gc54qk0cu832ns3nbnkvn9h1q8n0cl6h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
