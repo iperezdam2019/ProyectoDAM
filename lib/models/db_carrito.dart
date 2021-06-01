@@ -19,25 +19,33 @@ class CarritoBase {
 
   CarritoBase() : carrito = <CarritoItem>[];
 
-  void add(Product product) {
-    for (var i = 0; i < carrito.length; i++) {
-      if (carrito[i].product.id == product.id) {
+  bool addUnit(Product product) {
+    for (var carritoItem in carrito) {
+      if (carritoItem.product.id == product.id) {
         //Si ya tengo el producto en el carrio le sumo una cantidad y me salgo de la funcion
-        carrito[i].cantidad++;
-        return;
+        if (carritoItem.product.stock > 0) {
+          carritoItem.product.stock--;
+          carritoItem.cantidad++;
+          return true;
+        } else
+          return false;
       }
     }
     //si no lo he encontrado lo añado nuevo
-    carrito.add(CarritoItem(product: product, cantidad: 1));
+    final item = CarritoItem(product: product, cantidad: 1);
+    item.product.stock--;
+    carrito.add(item);
+    return true;
   }
 
-  void remove(Product product) {
-    for (var i = 0; i < carrito.length; i++) {
-      if (carrito[i].product.id == product.id) {
+  void removeUnit(Product product) {
+    for (var carritoItem in carrito) {
+      if (carritoItem.product.id == product.id) {
         //le restamos una cantidad al articulo
-        carrito[i].cantidad--;
+        carritoItem.product.stock++;
+        carritoItem.cantidad--;
         // si la cantidad es menor que 1 nos lo cargamos de la lista
-        if (carrito[i].cantidad < 1) carrito.removeAt(i);
+        if (carritoItem.cantidad < 1) carrito.remove(carritoItem);
         return;
       }
     }
