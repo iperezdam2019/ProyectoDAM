@@ -1,5 +1,7 @@
 import 'package:firebase_database/firebase_database.dart';
 
+import 'db_carrito.dart';
+
 class DbModel {
   static final databaseReference = FirebaseDatabase.instance.reference();
 
@@ -13,8 +15,19 @@ class DbModel {
     return ret.toString();
   }
 
-  static Future<bool> saveData() async {
-    await Future.delayed(Duration(seconds: 3));
-    return true;
+  static Future<bool> saveData(List<CarritoItem> products) async {
+    try {
+      for (var item in products) {
+        print(item.product.toJson());
+        databaseReference
+            .reference()
+            .child("products")
+            .child(item.product.id.toString())
+            .set(item.product.toJson());
+      }
+      return true;
+    } catch (_) {
+      return false;
+    }
   }
 }
