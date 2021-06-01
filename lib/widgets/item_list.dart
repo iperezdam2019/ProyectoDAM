@@ -12,8 +12,7 @@ class ItemList extends StatelessWidget {
       elevation: 3,
       child: GestureDetector(
         onTap: () {
-          print("'[DEBUG]... Pulsando en id " +
-              itemProduct.id.toString());
+          print("'[DEBUG]... Pulsando en id " + itemProduct.id.toString());
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) {
@@ -69,10 +68,11 @@ class ItemList extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontSize: 14),
                     ),
-                    Text(
-                      "Stock " + itemProduct.stock.toString() + ' unidades',
-                      style: TextStyle(fontSize: 14, color: Colors.black87),
-                    ),
+                    // Text(
+                    //   "Stock " + itemProduct.stock + ' unidades',
+                    //   style: TextStyle(fontSize: 14, color: Colors.black87),
+                    // ),
+                    Divider(),
                     Text(
                       'Precio ' + itemProduct.price.toString() + " €",
                       style: TextStyle(fontSize: 14, color: Colors.black87),
