@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/controllers/messageWidget.dart';
 import 'package:shop_app/models/db_carrito.dart';
 import 'package:shop_app/models/db_model.dart';
-import 'package:shop_app/models/db_database_util.dart';
-import 'package:shop_app/models/db_products.dart';
 
 class CarritoScreen extends StatefulWidget {
   @override
@@ -117,8 +115,8 @@ class _CarritoScreenState extends State<CarritoScreen> {
                                             print(
                                                 "[Debug]...Pulsando en eliminar producto");
                                             setState(() {
-                                              Carrito()
-                                                  .remove(carritoItem.product);
+                                              Carrito().removeUnit(
+                                                  carritoItem.product);
                                             });
                                           },
                                           splashColor:
@@ -157,9 +155,20 @@ class _CarritoScreenState extends State<CarritoScreen> {
                                         InkWell(
                                           onTap: () {
                                             print('Pulsando en +');
+                                            print(
+                                                "STock: ${carritoItem.product.stock}");
                                             setState(() {
-                                              Carrito()
-                                                  .add(carritoItem.product);
+                                              if (!Carrito().addUnit(
+                                                  carritoItem.product)) {
+                                                showDialog(
+                                                  context: context,
+                                                  builder: (_) => AlertDialog(
+                                                    title: Text("no hay stock"),
+                                                    content:
+                                                        Text("no hay stock"),
+                                                  ),
+                                                );
+                                              }
                                             });
                                           },
                                           splashColor: Colors.lightBlue,
@@ -227,14 +236,8 @@ class _CarritoScreenState extends State<CarritoScreen> {
                         // Actualizar las unidades en FireBase y si no hay suficiente mensaje de alerta
                         onTap: () async {
                           //llamamos a la funcion para guardar la info en firebase
-                          //TODO FALTA LA LOGICA DE GUARDAR EN FIREBASE
-                          //Le tendremos que pasar la array o producto por producto ¿?
-                          for (var i = 0; i < Carrito().carrito.length; i++) {
-                            FirebaseDatabaseUtil().updateProduct(Product());
-                          }
-
-                          // AHORA TE DEVUELVE UN TRUE DESPUES DE 3 SEGUNDOS PARA PROBAR.
-                          final resultSave = await DbModel.saveData();
+                          final resultSave =
+                              await DbModel.saveData(Carrito().carrito);
                           //devuelve un bool, true si es OK false si errro
                           if (resultSave) {
                             //si va bien mostramos un mensaje i limpiamos la lista
@@ -242,7 +245,8 @@ class _CarritoScreenState extends State<CarritoScreen> {
                               context: context,
                               builder: (_) => AlertDialog(
                                 title: Text("Compra Correcta"),
-                                content: Text("En breves dias tendrá su pedido"),
+                                content:
+                                    Text("En breves dias tendrá su pedido"),
                               ),
                             );
                             setState(() {
