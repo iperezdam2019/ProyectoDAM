@@ -130,22 +130,6 @@ class MenuLateral extends StatelessWidget {
               );
             },
           ),
-          // TO-DO
-          // Eliminar cuando este implimentado en el icono de la cesta
-          new ListTile(
-            title: Text(
-              "CESTA_Borrar",
-              style:
-                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-            ),
-            onTap: () {
-              print('[DEBUG]... Pulsando en CESTA menu');
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return CarritoScreen();
-                  },
-                ),
               );
             },
           ),
