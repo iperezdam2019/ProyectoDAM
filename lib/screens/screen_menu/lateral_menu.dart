@@ -130,9 +130,6 @@ class MenuLateral extends StatelessWidget {
               );
             },
           ),
-              );
-            },
-          ),
         ],
       ),
     );
