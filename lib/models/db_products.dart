@@ -18,6 +18,7 @@ class ProductsBase {
   List<Product> products;
 
   void save(items) {
+    products.clear();
     items.forEach((e) {
       products.add(Product.fromJson(e));
     });
