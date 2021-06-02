@@ -28,7 +28,7 @@ class CartButton extends StatelessWidget {
                         context: context,
                         builder: (_) => AlertDialog(
                           title: Text("No hay stock"),
-                          content: Text("No disponible"),
+                          content: Text("En breves dias estará disponible"),
                         ),
                       );
                     }
