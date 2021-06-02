@@ -163,9 +163,9 @@ class _CarritoScreenState extends State<CarritoScreen> {
                                                 showDialog(
                                                   context: context,
                                                   builder: (_) => AlertDialog(
-                                                    title: Text("no hay stock"),
+                                                    title: Text("Actualmente stock insuficiente"),
                                                     content:
-                                                        Text("no hay stock"),
+                                                        Text("En breve estará disponible"),
                                                   ),
                                                 );
                                               }
