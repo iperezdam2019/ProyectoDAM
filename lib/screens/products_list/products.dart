@@ -23,7 +23,6 @@ class ProductList extends StatelessWidget {
                 print('[DEBUG]... Pulsando en CESTA');
                 Navigator.push(
                   context,
-                  //TODO carrito CarritScreen(Sin producto)
                   MaterialPageRoute(builder: (context) => CarritoScreen()),
                 );
               }),
