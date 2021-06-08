@@ -46,17 +46,6 @@ class Product {
   int dto;
   int id;
 
-  //Update *******
-  /*
-  String get getDescription => description;
-  String get getLogo => logo;
-  String get getPrice => price.toString();
-  String get getProductType => productType.toString();
-  String get getTitle => title;
-  String get getStock => stock.toString();
-  String get getDto => dto.toString();
-  String get getId => id.toString();
-*/
   factory Product.fromJson(Map<dynamic, dynamic> json) => Product(
         description: json["Description"],
         logo: json["Logo"],
