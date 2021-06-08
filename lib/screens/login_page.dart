@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/login/sing_in_facebook.dart';
 import 'package:shop_app/login/sing_in_google.dart';
 import 'package:shop_app/screens/home.dart';
 
