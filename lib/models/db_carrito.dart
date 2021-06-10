@@ -20,6 +20,9 @@ class CarritoBase {
   CarritoBase() : carrito = <CarritoItem>[];
 
   bool addUnit(Product product) {
+        if (product.stock == 0) {
+      return false;
+    }
     for (var carritoItem in carrito) {
       if (carritoItem.product.id == product.id) {
         //Si ya tengo el producto en el carrio le sumo una cantidad y me salgo de la funcion
