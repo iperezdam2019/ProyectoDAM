@@ -21,8 +21,6 @@ class CartButton extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(40.0)),
                   onPressed: () {
-                    MessageWidget.info(context, 'Añadido a la cesta', 3);
-                    print("El id del articulo es " + compra.toString());
                     if (Carrito().addUnit(compra) == false) {
                       showDialog(
                         context: context,
@@ -31,6 +29,9 @@ class CartButton extends StatelessWidget {
                           content: Text("En breves dias estará disponible"),
                         ),
                       );
+                    }else{
+                    MessageWidget.info(context, 'Añadido a la cesta', 3);
+                    print("El id del articulo es " + compra.toString());
                     }
                   },
                   child: Text("Añadir a la cesta"),
