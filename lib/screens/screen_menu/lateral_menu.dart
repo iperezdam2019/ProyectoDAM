@@ -112,7 +112,7 @@ class MenuLateral extends StatelessWidget {
               );
             },
           ),
-          
+          /*
           new ListTile(
             title: Text(
               "LOGIN",
@@ -129,7 +129,7 @@ class MenuLateral extends StatelessWidget {
                 ),
               );
             },
-          ),
+          ),*/
         ],
       ),
     );
